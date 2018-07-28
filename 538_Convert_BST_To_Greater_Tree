@@ -1,0 +1,19 @@
+class Solution {
+public:
+    TreeNode* convertBST(TreeNode* root) {
+      conv(root,0);
+      return root;
+    }
+
+    int conv(TreeNode* root, int sum) {
+      if (root == NULL) {
+        return sum;
+      }
+      //get the sum of all the values in the right subtree
+      //and update the value of the root
+      root->val = root->val + conv(root->right,sum);
+      //pass the root value to the left subtree
+      return conv(root->left, root->val);
+    }
+      
+};

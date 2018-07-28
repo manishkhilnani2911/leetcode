@@ -1,0 +1,15 @@
+class Solution {
+private:
+  int sum = 0;
+privare:
+  TreeNode* convertBST(TreeNode* root) {
+    travelRev(root);
+    return root;
+  }
+  void travelRev(TreeNode* root) {
+    if (!root) return;
+    if (root->right) travelRev(root->right);
+    sum = sum+root->val;
+    root->val = root->val + sum;
+    if (root->left) travelRev(root->left);
+  }
