@@ -1,0 +1,18 @@
+class Solution {
+public:
+    
+    bool hasPathSum(TreeNode* root, int sum) {
+      //we have reached a leaf node or the root is empty
+      //return false in such a case
+      if (!root) 
+        return false;
+      //found a leaf node with the needed sum   	
+      if (root->val == sum && !root->right && !root->left) {
+        return true;  
+      } else 
+      //recur in the left and right sub tree, subtracting the root value
+      //from the sum
+        return hasPathSum(root->right, sum-root->val) || hasPathSum(root->left, sum-root->val);   
+      
+    }
+};
