@@ -32,8 +32,6 @@ public:
       //insert the element into the vector
       total.push_back(root->val);
 
-      //if this node is a leaf node check for vector sum
-
       //collect all the nodes in the left sub tree of the current node
       if (root->left)
         pathSum(root->left,sum);
