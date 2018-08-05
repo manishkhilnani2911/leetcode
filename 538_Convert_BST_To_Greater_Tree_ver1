@@ -9,7 +9,12 @@ privare:
   void travelRev(TreeNode* root) {
     if (!root) return;
     if (root->right) travelRev(root->right);
-    sum = sum+root->val;
+    //no more to travel
+    //the current node has no node greater than itself,
+    //so update its value as the sum of all nodes greater then itself
     root->val = root->val + sum;
+    //now new root value will be available to left nodes
+    //so that this value will be added to their root value
+    sum = root->val;
     if (root->left) travelRev(root->left);
   }
