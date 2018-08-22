@@ -25,29 +25,23 @@ class Solution {
   int res;
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-      if (!root) {
+      if (!root)
         return 0;
-      }
-      getMaxDiameter(root);
+      int lh = getMaxHeight(root->left);
+      int rh = getMaxHeight(root->right);
+      res = max(res,lh+rh);
+      diameterOfBinaryTree(root->left);
+      diameterOfBinaryTree(root->right);
       return res;
     }
-    void getMaxDiameter(TreeNode* root) {
-      if (!root) {
-        return;
-      }
-      //get the max length of right and left subtree having the current node as the root
-      int ll = getMaxTreeLength(root->left) + 1;
-      int rl = getMaxTreeLength(root->right) + 1;
-      res = max(res,ll+rl-2);
-      getMaxDiameter(root->left);
-      getMaxDiameter(root->right);
-    }
-    int getMaxTreeLength(TreeNode* root) {
-      if (!root){
+    int getMaxHeight(TreeNode* root) {
+      if (!root)
         return 0;
-      } else if (!root->right && !root->left) {
-        return 1;
+      int lh = getMaxHeight(root->left);
+      int rh = getMaxHeight(root->right);
+      if (lh > rh) {
+        return lh + 1;
       }
-      return max(getMaxTreeLength(root->right), getMaxTreeLength(root->left)) + 1;
+      return rh + 1;
     }
 };
