@@ -46,7 +46,7 @@ In terms of calculation, we need to start with the lower number, since the value
 class Solution {
 public:
     int numTrees(int n) {
-      vector<int> count(n,0);
+      vector<int> count(n+1,0);
       count[0] = 1; //we can make one unique tree if the number of nodes are 0 or 1
       count[1] = 1;
       //example
