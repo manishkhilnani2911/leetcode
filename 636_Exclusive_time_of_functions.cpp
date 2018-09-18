@@ -27,6 +27,7 @@ Two functions won't start or end at the same time.
 Functions could be called recursively, and will always end.
 1 <= n <= 100*/
 class Solution {
+	//Fb_Ub_Li_Go_Mi
 private:
   stack<pair<int,int>> s;
   public:
