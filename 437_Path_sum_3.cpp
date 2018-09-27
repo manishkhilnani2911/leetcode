@@ -1,4 +1,4 @@
-You are given a binary tree in which each node contains an integer value.
+/*You are given a binary tree in which each node contains an integer value.
 
 Find the number of paths that sum to a given value.
 
@@ -22,36 +22,32 @@ Return 3. The paths that sum to 8 are:
 
 1.  5 -> 3
 2.  5 -> 2 -> 1
-3. -3 -> 11
+3. -3 -> 11 */
 
 class Solution {
+  //Fb_Mi_Qu_Go
 private :
   int count = 0;
-  vector<int> total;
 public:
     int pathSum(TreeNode* root, int sum) {
-      if (!root)
+      if (!root) {
         return 0;
-      //insert the element into the vector
-      total.push_back(root->val);
-
-      //collect all the nodes in the left sub tree of the current node
-      pathSum(root->left,sum);
-
-      //collect all the nodes in the right subtree of the current node
-      pathSum(root->right,sum);
-
-      //at the leaf node check for the sum
-      int path_sum = 0;
-      for(int j = total.size()-1; j>=0; j--) {
-        path_sum += total[j];
-        if (path_sum == sum) {
-          count += 1;
-        }
       }
-      //remove the current node as it would be the leaf node
-      total.pop_back();
-
+      //find if there is any path starting from root that has the path sum equal to sum
+      dfs(root,sum);
+      //get path sum from every node
+      pathSum(root->left,sum);
+      pathSum(root->right,sum);
       return count;
+    }
+    void dfs(TreeNode* root, int sum) {
+      if (!root) {
+        return;
+      }
+      if (root->val == sum) {
+        count += 1;
+      }
+      dfs(root->left,sum-root->val);
+      dfs(root->right,sum-root->val);
     }
 };
