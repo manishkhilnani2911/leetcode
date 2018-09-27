@@ -22,6 +22,10 @@ But the following [1,2,2,null,3,null,3] is not:
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//for each level the extreme right node should be equal to extreme left
+//and one node right of extreme right should be equal to one node left of extreme left, we continue moving inwards till we find 
+//non equal nodes
+//else the tree is symmetric
 class Solution {
 private:
   queue<TreeNode*> myq;
