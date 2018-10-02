@@ -20,6 +20,7 @@ Explanation: There are three ways to climb to the top.
 2. 1 step + 2 steps
 3. 2 steps + 1 step*/
 class Solution {
+//Am_Bl_Wa_Al_Go_Li_Ad_Ba_Ap_Mi_Ub_Ye_Ly_Fa_Ya
 public:
     int climbStairs(int n) {
       if (n == 0) {

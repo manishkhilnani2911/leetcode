@@ -16,6 +16,8 @@ public:
       if (nums.size() == 0)
         return 0;
       int maxSum = nums[0];
+      //if the previous number is positive add to current number
+        //this will take care if we have a negative number at i-1 position
       for (int i=1;i<nums.size();++i){
         if (nums[i-1] > 0){
           nums[i] += nums[i-1];
