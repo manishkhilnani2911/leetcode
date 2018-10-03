@@ -10,6 +10,7 @@ Input: [1,2,3,0,2]
 Output: 3 
 Explanation: transactions = [buy, sell, cooldown, buy, sell]*/
 class Solution {
+//Al_Go
 public:
      int maxProfit(vector<int>& prices) {
         int size = prices.size();
