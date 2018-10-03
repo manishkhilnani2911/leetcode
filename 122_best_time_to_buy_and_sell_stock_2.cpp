@@ -23,6 +23,7 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.*/
 class Solution {
+	//Ad_Mi_Fa_Al_Bl_Am_Go_Ap_Vm
 public:
     int maxProfit(vector<int>& prices) {
         if(prices.size() == 0){
