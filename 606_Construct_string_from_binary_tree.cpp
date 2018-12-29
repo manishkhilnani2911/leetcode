@@ -52,13 +52,13 @@ public:
       if (!root)
         return;
       res += to_string(root->val);
-
+      //enclose the results within ()
       if (root->left)
       {
         res += "(";
         preOrder(root->left);
         res += ")";
-      } else if (root->right){
+      } else if (root->right){ //if the root does not have a left child but has a right child we need to have a () for the left child
         res += "()";
       }
       if (root->right) {
