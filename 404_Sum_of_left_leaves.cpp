@@ -18,24 +18,25 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//Ad_Go_Bl_Fa
 class Solution {
   int sum;
 public:
     int sumOfLeftLeaves(TreeNode* root) {
       return dfs(root, false);
+      return sum;
     }
-    int dfs(TreeNode* root, bool val) {
+    void dfs(TreeNode* root, bool val) {
       if (!root) {
-        return 0;
+        return ;
       }
       //bool val is to tell whether its a right node or left node, left_node == true, else false
       if (!root->left && !root->right) {
         if (val) {
-          return root->val;
-        } else {
-          return 0;
-        }
+          sum += root->val;
+        } 
       }
-      return dfs(root->left, true) + dfs(root->right, false);
+      dfs(root->left, true);
+      dfs(root->right, false);
     }
 };

@@ -31,6 +31,7 @@ Explanation: The smallest value is 2, but there isn't any second smallest value.
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//Li_Mi
 //Traverse the graph
 //keep track of the first and second smallest value by
 //updating first and second at each node

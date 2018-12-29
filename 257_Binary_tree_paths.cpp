@@ -24,6 +24,7 @@ Explanation: All root-to-leaf paths are: 1->2->5, 1->3 */
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//Fa_Am_Go_Ap
 class Solution {
 private:
   vector<string> res;
