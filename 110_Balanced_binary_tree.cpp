@@ -36,6 +36,35 @@ Return false.*/
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//Go_Mi_Am_Fa_Ad_Al_Pa_Air_Ba_Ci_Or_Bl
+class Solution {
+public:
+    bool isBalanced(TreeNode* root) {
+      if (!root)
+        return true;
+      //get height of each subtree
+      int l = getMaxDepth(root->left);
+      int r = getMaxDepth(root->right);
+      if (abs(l-r) > 1) {
+        return false;
+      }
+      if (!isBalanced(root->left) || !isBalanced(root->right)) {
+        return false;
+      }
+      return true;
+    }
+    int getMaxDepth(TreeNode* root) {
+      if (!root) {
+        return 0;
+      }
+      int l = getMaxDepth(root->left);
+      int r = getMaxDepth(root->right);
+      if (l>r)
+        return l+1;
+      return r+1;
+    }
+};
+
 class Solution {
 public:
     bool isBalanced(TreeNode* root) {

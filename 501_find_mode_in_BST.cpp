@@ -32,6 +32,7 @@ Follow up: Could you do that without using any extra space? (Assume that the imp
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//Go_Sn
 //similar to traversing a sorted array and keeping track of the highest frequency number
 class Solution {
   vector<int> modes;
