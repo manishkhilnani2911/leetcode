@@ -11,6 +11,7 @@ Could you solve it with constant space complexity? (The output array does not co
 
 */
 class Solution {
+	//Fa_Ly_Am_Ad_Ya_Go_Mi_Eb_Ye_Bl_Wa_In_Ap_Ex_Tw_Li_Sn_Ub_Nv
   vector<int> res;
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
