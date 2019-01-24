@@ -41,6 +41,7 @@ After calling your function, the tree should look like:
 //if the current node has a left child, the next pointer of left child will point to the right child
 //if the current node has a right child then the next pointer of the right child will point to the left child of currents next node if it has one otherwise NULL
 class Solution {
+	//Bl_Mi_Fa_Go_Am_Ap_Nu_Vm_Ub
 public:
     void connect(TreeLinkNode *root) {
       if (!root)
