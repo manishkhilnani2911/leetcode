@@ -42,13 +42,20 @@ private:
         get_id_and_start_time(logs[i], id, start, time);
         if (start) {
           //cout<<"pushing\n";
+	  //if the function is starting put it on top of the stack.
           s.push(make_pair(id, time));
         } else {
+		//else if the function is ending then since the threads are working on nonpreemptive CPU,
+		//the top of the stack would contain the start time for this function.
           int start_time = s.top().second;
           s.pop();
           int duration = time - start_time + 1;
+	  //this function we have started and ended previously also so append the result to that
           ans[id] += duration;
           if (!s.empty())
+		  //the duration of the current ended function should be subtracted from the next function
+		  //that is about to end, otherwise we will add current ended function duration to the next
+		  //ending function and will lead to wrong results
             ans[s.top().first] -= duration;
         }
       }
