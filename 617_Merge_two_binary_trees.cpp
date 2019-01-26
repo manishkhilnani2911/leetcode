@@ -33,7 +33,7 @@ Note: The merging process must start from the root nodes of both trees.*/
 //if the right if null we do not need to do anything
 //if left is null then add the right tree node as the left child of the left tree current node.
 class Solution {
-
+//Am_Ad_Go
 public:
     TreeNode* mergeTrees(TreeNode* t1, TreeNode* t2) {
       if (!t1)

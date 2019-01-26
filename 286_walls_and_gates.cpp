@@ -20,6 +20,7 @@ After running your function, the 2D grid should be:
   1  -1   2  -1
   0  -1   3   4*/
 class Solution {
+	//Fa_Ub_Am_Mi_Go
 public:
     void wallsAndGates(vector<vector<int>>& rooms) {
       queue<pair<int,int>> q;
