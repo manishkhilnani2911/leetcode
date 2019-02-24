@@ -26,6 +26,7 @@ class BSTIterator {
   }
 public:
     BSTIterator(TreeNode *root) {
+	    //get all the inorder nodes form this node
       addIndividualEle(root);
     }
 
@@ -36,6 +37,7 @@ public:
 
     /** @return the next smallest number */
     int next() {
+	    //for each node if it has inorder successor add them to the top of the stack
       TreeNode* res = s.top();
       s.pop();
       if (res->right) {
