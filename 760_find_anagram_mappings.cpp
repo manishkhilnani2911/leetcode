@@ -21,9 +21,11 @@ class Solution {
 public:
     vector<int> anagramMappings(vector<int>& A, vector<int>& B) {
       unordered_map<int,int> valPosMap;
+      //for the first vector insert the element as key and its index as the value
       for(int i=0;i<B.size();i++){
         valPosMap.insert(make_pair(B[i],i));
       }
+      //for the second vector get the index of the value from the map which is the answer 
       for(auto i : A){
         res.push_back(valPosMap[i]);
       }
